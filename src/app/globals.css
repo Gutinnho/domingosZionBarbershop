@@ -6,15 +6,12 @@ body {
 	height: 100vh;
 	width: 100vw;
 
-	width: 360px;
-	margin-inline: auto; /* Margem para dispositivos móveis */
+	margin-inline: auto;
+}
 
-	@media (min-width: 768px) {
-		width: 768px;
-	}
-
-	@media (min-width: 1280px) {
-		width: 1280px;
+@layer components {
+	.wrapper {
+		@apply mx-6 sm:mx-10 md:mx-14 xl:mx-20;
 	}
 }
 
