@@ -3,9 +3,10 @@ import Image from 'next/image';
 import logo from '@/assets/Logo.png';
 import { List, X } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
-import whatsappLogo from '@/assets/whatsappIcon.svg';
-import facebookLogo from '@/assets/facebookIcon.svg';
-import instagramLogo from '@/assets/instagramIcon.svg';
+
+import FacebookIconSVG from './SVGs/FacebookIconSVG';
+import InstagramIconSVG from './SVGs/InstagramIconSVG';
+import WhatsappIcon from './SVGs/WhatsappIconSVG';
 
 function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,36 +64,21 @@ function Header() {
 							</li>
 						</ul>
 
-						<button className='border-2 border-blue-900 px-4 py-2 text-2xl font-bold uppercase text-white'>
+						<button className='border-2 border-blue-900 px-4 py-2 text-2xl font-bold uppercase text-white drop-shadow-custom'>
 							Agende seu horário
 						</button>
 
 						<div className='flex gap-8 py-2'>
 							<a href='#'>
-								<Image
-									src={instagramLogo}
-									width={40}
-									height={40}
-									alt='Link perfil do Instagram'
-								/>
+								<InstagramIconSVG fill='#2B488A' size={40} />
 							</a>
 
 							<a href='#'>
-								<Image
-									src={facebookLogo}
-									width={40}
-									height={40}
-									alt='Link perfil do Instagram'
-								/>
+								<FacebookIconSVG fill='#2B488A' size={40} />
 							</a>
 
 							<a href='#'>
-								<Image
-									src={whatsappLogo}
-									width={40}
-									height={40}
-									alt='Link perfil do Instagram'
-								/>
+								<WhatsappIcon fill='#2B488A' size={40} />
 							</a>
 						</div>
 					</div>
