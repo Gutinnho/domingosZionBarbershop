@@ -11,10 +11,13 @@ module.exports = {
 			colors: {
 				neutral: {
 					800: '#202020',
+					950: '#131313',
 				},
 				blue: {
 					900: '#2B488A',
 				},
+				white: '#FEFEFE',
+				red: { 500: '#EC3237' },
 			},
 			dropShadow: {
 				custom: '0px 4px 4px rgba(0, 0, 0, 0.25)',

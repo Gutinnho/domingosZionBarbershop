@@ -1,0 +1,62 @@
+[
+	{
+		"title": {
+			"icon": "scissors",
+			"name": "Corte Social"
+		},
+		"content": {
+			"description": "Clássico e elegante. Uma ótima opção para ocasiões formais e profissionais. É um estilo atemporal que transmite uma imagem profissional e sofisticada.",
+			"price": "25,00"
+		}
+	},
+	{
+		"title": {
+			"icon": "scissors",
+			"name": "Corte Degradê"
+		},
+		"content": {
+			"description": "Versátil e moderno. O degradê é uma ótima escolha para quem deseja um corte que pode ser usado em qualquer ocasião, fora deixar um aparência mais jovial.",
+			"price": "30,00"
+		}
+	},
+	{
+		"title": {
+			"icon": "straightRazor",
+			"name": "Barba"
+		},
+		"content": {
+			"description": "A barba contribuí para uma aparência elegante e confiante. Com técnicas tradicionais, produtos de qualidade e atenção aos detalhes. Visamos proporcionar um cuidado especializado e um visual impecável à barba.",
+			"price": "20,00+"
+		}
+	},
+	{
+		"title": {
+			"icon": "straightRazor",
+			"name": "Barba Terapia"
+		},
+		"content": {
+			"description": "Tratamento relaxante e revitalizante, que não apenas proporciona uma barba bem-cuidada, mas também melhora a saúde da pele e promove uma sensação de bem-estar geral.",
+			"price": "30,00+"
+		}
+	},
+	{
+		"title": {
+			"icon": "hairTratamentIcon",
+			"name": "Hidratação"
+		},
+		"content": {
+			"description": "Não só melhora a aparência do cabelo, mas também promove a saúde dos fios a longo prazo. Ajuda a restaurar a umidade natural, suavizar a cutícula capilar, reduzir o frizz e aumentar a maleabilidade.",
+			"price": "60,00"
+		}
+	},
+	{
+		"title": {
+			"icon": "haircutIcon",
+			"name": "Corte Feminino"
+		},
+		"content": {
+			"description": "Voltado para mulheres que desejam mudar o estilo, o comprimento ou a aparência dos seus cabelos. É usado no processo uma combinação de técnicas, que resultam em um visual renovado e personalizado para cada cliente.",
+			"price": "30,00"
+		}
+	}
+]
