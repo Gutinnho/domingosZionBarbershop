@@ -17,8 +17,6 @@ function FacebookIconSVG({ fill, size }: Props) {
 			<svg
 				version='1.0'
 				xmlns='http://www.w3.org/2000/svg'
-				width='160.000000pt'
-				height='160.000000pt'
 				viewBox='0 0 160.000000 160.000000'
 				preserveAspectRatio='xMidYMid meet'>
 				<g
