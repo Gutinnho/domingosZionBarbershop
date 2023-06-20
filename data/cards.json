@@ -25,7 +25,7 @@
 			"name": "Barba"
 		},
 		"content": {
-			"description": "A barba contribuí para uma aparência elegante e confiante. Com técnicas tradicionais, produtos de qualidade e atenção aos detalhes. Visamos proporcionar um cuidado especializado e um visual impecável à barba.",
+			"description": "A barba contribuí para uma aparência elegante e confiante. Visamos proporcionar um cuidado especializado e um visual impecável à barba.",
 			"price": "20,00+"
 		}
 	},
@@ -55,7 +55,7 @@
 			"name": "Corte Feminino"
 		},
 		"content": {
-			"description": "Voltado para mulheres que desejam mudar o estilo, o comprimento ou a aparência dos seus cabelos. É usado no processo uma combinação de técnicas, que resultam em um visual renovado e personalizado para cada cliente.",
+			"description": "Voltado para mulheres que desejam mudar o estilo, o comprimento ou a aparência dos seus cabelos. O resultado é um visual renovado e personalizado para cada cliente.",
 			"price": "30,00"
 		}
 	}

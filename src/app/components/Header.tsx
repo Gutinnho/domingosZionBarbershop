@@ -53,7 +53,7 @@ function Header() {
 					<header
 						className={`fixed ${
 							isHeaderSticky ? 'bg-neutral-800/50' : 'bg-neutral-800/80'
-						} wrapper top-0 z-10 flex w-full justify-between py-3 transition duration-300`}>
+						} top-0 z-10 flex w-full justify-between px-6 py-3 transition duration-300 sm:px-10 md:px-14 xl:px-20`}>
 						<Image
 							src={logo}
 							alt='Logo da Domingos Zion'
@@ -66,7 +66,7 @@ function Header() {
 						</button>
 					</header>
 				) : (
-					<header className='wrapper fixed left-0 right-0 top-0 z-50 flex h-full flex-col gap-20 bg-neutral-950 py-3'>
+					<header className='fixed left-0 right-0 top-0 z-50 flex h-full flex-col gap-20 bg-neutral-950 px-6 py-3 sm:px-10 md:px-14 xl:px-20'>
 						<div className='flex justify-between'>
 							<Image
 								src={logo}
@@ -121,7 +121,7 @@ function Header() {
 			<header
 				className={`fixed ${
 					isHeaderSticky ? 'bg-neutral-800/50' : 'bg-neutral-800/80'
-				} wrapper top-0 z-10  flex w-full items-center justify-between py-3 transition duration-300`}>
+				} top-0 z-10 flex w-full items-center justify-between  px-6 py-3 transition duration-300 sm:px-10 md:px-14 xl:px-20`}>
 				<Image
 					src={logo}
 					alt='Logo da Domingos Zion'
