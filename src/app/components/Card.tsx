@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import { useLayoutEffect, useState } from 'react';
 
 interface IconOptionMapping {
 	[key: string]: string;
@@ -20,28 +22,55 @@ function Card({ cardIcon, cardName, cardDescription, cardPrice }: CardProps) {
 
 	var icon = iconOptionMapping[cardIcon];
 
+	const [currentWidth, setCurrentWidth] = useState<number>(768);
+	useLayoutEffect(() => {
+		function handleResize() {
+			setCurrentWidth(window.innerWidth);
+		}
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
 	return (
-		<div className=' p-4'>
-			<div className='flex items-center justify-evenly border-b-2 border-red-500 p-1'>
-				<Image src={icon} alt='Icone Tesoura' width={32} height={32} />
+		<div className='flex h-auto flex-col self-start justify-self-center p-4 sm:h-[394px] sm:max-w-sm md:h-[346px] lg:h-[326px] lg:max-w-lg  2xl:h-[354px]'>
+			<div className='flex items-center justify-evenly border-b-2 border-red-500  py-1 '>
+				{currentWidth >= 1024 ? (
+					<Image src={icon} alt='Icone Tesoura' width={48} height={48} />
+				) : currentWidth >= 768 ? (
+					<Image src={icon} alt='Icone Tesoura' width={40} height={40} />
+				) : (
+					<Image src={icon} alt='Icone Tesoura' width={32} height={32} />
+				)}
 
-				<p className='text-xl font-bold text-white'>{cardName}</p>
+				<p className='whitespace-nowrap text-lg font-bold text-white sm:text-xl lg:text-2xl'>
+					{cardName}
+				</p>
 
-				<div className='h-8 w-8'></div>
+				<div className='h-1 w-8 md:w-10 lg:w-12'></div>
 			</div>
 
-			<div className='px-2 py-3'>
-				<div className='flex flex-col gap-1'>
-					<p className='text-base font-normal text-white'>{cardDescription}</p>
+			<div className='flex h-full flex-col justify-between gap-1 px-2 py-3'>
+				<div className='flex h-full flex-col justify-between'>
+					<div className='flexitems-center'>
+						<p className='text-base font-normal text-white sm:text-lg lg:text-xl'>
+							{cardDescription}
+						</p>
+					</div>
 
-					<p className='text-base font-bold text-white'>R$ {cardPrice}</p>
+					<p className='text-base font-bold text-white sm:text-lg lg:text-xl'>
+						R$ {cardPrice}
+					</p>
 				</div>
 
-				<div className='flex justify-end'>
-					<button className='border-2 border-red-500 bg-white px-2 py-1 text-sm font-bold uppercase text-red-700'>
-						Reserve
-					</button>
-				</div>
+				<button className='w-fit self-end border-2 border-red-500 bg-white px-2 py-1 text-base font-bold uppercase text-red-700 transition duration-300 hover:bg-red-500 hover:text-white sm:text-lg lg:text-xl'>
+					Reserve
+				</button>
 			</div>
 		</div>
 	);
