@@ -1,19 +1,63 @@
+'use client';
+import { useEffect, useLayoutEffect, useState } from 'react';
+
 interface Props {
 	fill: string;
-	size: number;
+	size?: number;
 }
 
 function InstagramIconSVG({ fill, size }: Props) {
+	const [width, setWidth] = useState<number>(0);
+	const [sizes, setSizes] = useState<number>(0);
+
+	useLayoutEffect(() => {
+		const handleResize = () => {
+			setWidth(window.innerWidth);
+		};
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [width]);
+
+	useEffect(() => {
+		if (width >= 1280) {
+			setSizes(44);
+		} else if (width >= 768) {
+			setSizes(36);
+		} else {
+			setSizes(28);
+		}
+	}, [width]);
+
+	var finalSize = size != undefined ? size : sizes;
+
+	const divStyle =
+		finalSize === 44
+			? {
+					width: 44,
+					height: 44,
+			  }
+			: finalSize === 36
+			? {
+					width: 36,
+					height: 36,
+			  }
+			: finalSize === 28
+			? {
+					width: 28,
+					height: 28,
+			  }
+			: {
+					width: finalSize,
+					height: finalSize,
+			  };
 	return (
-		<div
-			style={{
-				width: size,
-				height: size,
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-			className='drop-shadow-custom'>
+		<div style={divStyle} className='drop-shadow-custom hover:brightness-75'>
 			<svg
 				version='1.0'
 				xmlns='http://www.w3.org/2000/svg'
