@@ -9,7 +9,7 @@ import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
 import Logo from '@components/Logo';
 
 function Header() {
-	const [currentWidth, setCurrentWidth] = useState<number>(innerWidth);
+	const [currentWidth, setCurrentWidth] = useState<number>(0);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
