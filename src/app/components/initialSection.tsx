@@ -1,4 +1,4 @@
-function initialSection() {
+function InitialSection() {
 	return (
 		<section className="bg-[url('../assets/homeBg.png')] bg-cover bg-center py-[120px] lg:py-[160px] ">
 			<div className='wrapper mx-auto flex h-full flex-col items-center justify-around gap-12 text-center sm:max-w-screen-sm sm:gap-14 md:max-w-screen-md lg:max-w-screen-lg lg:gap-20'>
@@ -29,5 +29,5 @@ function initialSection() {
 	);
 }
 
-export default initialSection;
+export default InitialSection;
 
