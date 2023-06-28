@@ -1,0 +1,27 @@
+@tailwind components;
+
+@layer components {
+	.paragraph_normal {
+		@apply text-xs font-normal text-white sm:text-sm md:text-base xl:text-lg;
+	}
+
+	.paragraph_medium {
+		@apply text-xs font-medium text-white sm:text-sm md:text-base xl:text-lg;
+	}
+
+	.paragraph_bold {
+		@apply text-xs font-bold text-white sm:text-sm md:text-base xl:text-lg;
+	}
+
+	.title_text {
+		@apply text-sm font-bold text-white sm:text-base md:text-lg xl:text-xl;
+	}
+
+	.title_div_reverse {
+		@apply relative flex items-center justify-center gap-1 sm:-right-4 sm:flex-row-reverse lg:-right-5 xl:-right-6;
+	}
+
+	.title_div {
+		@apply relative flex items-center justify-center gap-1 sm:-left-4 sm:justify-start lg:left-0 lg:flex-row-reverse xl:left-1;
+	}
+}
