@@ -1,6 +1,6 @@
 import ServicesSection from '@components/ServicesSection';
 import InitialSection from '@components/InitialSection';
-import ContactUsSection from '@components/ContactUsSection';
+import ContactUsSection from '@/app/components/Sections/ContactUsSection';
 
 export default function Home() {
 	return (
