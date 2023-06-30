@@ -1,11 +1,10 @@
 'use client';
 
-import { WidthContext } from '@/app/context/WidthContext';
+import { useWindowWidth } from '@/app/context/WidthContext';
 import { MapPin } from '@phosphor-icons/react';
-import { useContext } from 'react';
 
 export default function BusinessAddress() {
-	const windowWidth = useContext(WidthContext);
+	const windowWidth = useWindowWidth();
 
 	return (
 		<div className='flex flex-col items-center sm:items-end'>
