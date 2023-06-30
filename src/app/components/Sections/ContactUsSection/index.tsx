@@ -2,12 +2,13 @@ import './styles.css';
 
 import Image from 'next/image';
 
+import { WindowWidthProvider } from '@/app/context/WidthContext';
+
 import BusinessAddress from './BusinessAddress';
 import BusinessPhone from './BusinessPhone';
 import BusinessHours from './BusinessHours';
 
 import backgroundImage from '@assets/contactUsBg.png';
-import { WindowProvider } from '@/app/context/WidthContext';
 
 function ContactUsSection() {
 	return (
@@ -30,14 +31,14 @@ function ContactUsSection() {
 					referrerPolicy='no-referrer-when-downgrade'></iframe>
 
 				<div className='flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-4 lg:row-start-1 lg:flex-col lg:items-end lg:border-r-2 lg:border-red-500 lg:py-3 lg:pr-7'>
-					<WindowProvider>
+					<WindowWidthProvider>
 						<div className='flex flex-col gap-6 sm:pr-4 lg:pr-5'>
 							<BusinessAddress /> <BusinessPhone />
 						</div>
 						<div className='flex items-start gap-2 sm:pl-4 lg:pl-0'>
 							<BusinessHours />
 						</div>
-					</WindowProvider>
+					</WindowWidthProvider>
 				</div>
 
 				<div className='flex items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-span-1'>

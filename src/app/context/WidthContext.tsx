@@ -1,19 +1,31 @@
 'use client';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import React, { createContext, useState, useEffect } from 'react';
+interface WindowWidthContextType {
+	width: number;
+}
 
-const WidthContext = createContext<number>(0);
+const WindowWidthContext = createContext<WindowWidthContextType>({ width: 0 });
 
-interface WidthContextProps {
+WindowWidthContext.displayName = 'WindowWidth';
+
+export function useWindowWidth(): number {
+	const context = useContext(WindowWidthContext);
+	return context.width;
+}
+
+interface WindowWidthProviderProps {
 	children: React.ReactNode;
 }
 
-const WindowProvider = ({ children }: WidthContextProps) => {
-	const [windowWidth, setWindowWidth] = useState(640);
+export function WindowWidthProvider({
+	children,
+}: WindowWidthProviderProps): JSX.Element {
+	const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
-		const handleResize = () => {
-			setWindowWidth(innerWidth);
+		const handleResize = (): void => {
+			setWidth(window.innerWidth);
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -24,10 +36,8 @@ const WindowProvider = ({ children }: WidthContextProps) => {
 	}, []);
 
 	return (
-		<WidthContext.Provider value={windowWidth}>
+		<WindowWidthContext.Provider value={{ width }}>
 			{children}
-		</WidthContext.Provider>
+		</WindowWidthContext.Provider>
 	);
-};
-
-export { WidthContext, WindowProvider };
+}
