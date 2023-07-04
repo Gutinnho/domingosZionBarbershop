@@ -1,6 +1,17 @@
+import Image from 'next/image';
+import backgroundImage from '@assets/homeBg.png';
+
 function InitialSection() {
 	return (
-		<section className="bg-[url('../assets/homeBg.png')] bg-cover bg-center py-[120px] lg:py-[160px] ">
+		<section className='relative py-[120px] lg:py-[160px]'>
+			<Image
+				alt=''
+				src={backgroundImage}
+				placeholder='blur'
+				fill
+				className='-z-50 blur-sm'
+				sizes='50'
+			/>
 			<div className='wrapper mx-auto flex h-full flex-col items-center justify-around gap-12 text-center sm:max-w-screen-sm sm:gap-14 md:max-w-screen-md lg:max-w-screen-lg lg:gap-20'>
 				<div className='flex flex-col gap-6 sm:gap-9 lg:gap-12'>
 					<div>
@@ -19,7 +30,7 @@ function InitialSection() {
 					</p>
 				</div>
 
-				<button className='border-4 border-blue-900 px-2 py-1 transition hover:border-blue-950 sm:px-3  lg:px-4'>
+				<button className='border-4 border-blue-900 px-2 py-1 transition-colors duration-300 hover:bg-blue-900 sm:px-3  lg:px-4'>
 					<p className='whitespace-nowrap text-xl font-bold uppercase text-white sm:text-2xl lg:text-3xl xl:text-4xl'>
 						Agende seu horário
 					</p>
