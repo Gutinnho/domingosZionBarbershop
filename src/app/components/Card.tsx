@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useLayoutEffect, useState } from 'react';
+import { useWindowWidth } from '../context/WidthContext';
 
 interface IconOptionMapping {
 	[key: string]: string;
@@ -19,30 +19,16 @@ function Card({ cardIcon, cardName, cardDescription, cardPrice }: CardProps) {
 		haircutIcon: '/assets/haircutIcon.png',
 		hairTratamentIcon: '/assets/hairTratamentIcon.png',
 	};
+	const windowWidth = useWindowWidth();
 
 	var icon = iconOptionMapping[cardIcon];
-
-	const [currentWidth, setCurrentWidth] = useState<number>(768);
-	useLayoutEffect(() => {
-		function handleResize() {
-			setCurrentWidth(window.innerWidth);
-		}
-
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, []);
 
 	return (
 		<div className='flex h-auto flex-col self-start justify-self-center p-4 sm:h-[394px] sm:max-w-sm md:h-[346px] lg:h-[326px] lg:max-w-lg  2xl:h-[354px]'>
 			<div className='flex items-center justify-evenly border-b-2 border-red-500  py-1 '>
-				{currentWidth >= 1024 ? (
+				{windowWidth >= 1024 ? (
 					<Image src={icon} alt='Icone Tesoura' width={48} height={48} />
-				) : currentWidth >= 768 ? (
+				) : windowWidth >= 768 ? (
 					<Image src={icon} alt='Icone Tesoura' width={40} height={40} />
 				) : (
 					<Image src={icon} alt='Icone Tesoura' width={32} height={32} />

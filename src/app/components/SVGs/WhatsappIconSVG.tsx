@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useWindowWidth } from '@/app/context/WidthContext';
+import { useEffect, useState } from 'react';
 
 interface Props {
 	fill: string;
@@ -7,32 +8,18 @@ interface Props {
 }
 
 function WhatsappIcon({ fill, size }: Props) {
-	const [width, setWidth] = useState<number>(0);
+	const windowWidth = useWindowWidth();
 	const [sizes, setSizes] = useState<number>(0);
 
-	useLayoutEffect(() => {
-		const handleResize = () => {
-			setWidth(window.innerWidth);
-		};
-
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, [width]);
-
 	useEffect(() => {
-		if (width >= 1280) {
+		if (windowWidth >= 1280) {
 			setSizes(44);
-		} else if (width >= 768) {
+		} else if (windowWidth >= 768) {
 			setSizes(36);
 		} else {
 			setSizes(28);
 		}
-	}, [width]);
+	}, [windowWidth]);
 
 	var finalSize = size != undefined ? size : sizes;
 

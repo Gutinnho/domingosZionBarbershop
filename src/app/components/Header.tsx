@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { List, X } from '@phosphor-icons/react';
 
@@ -7,9 +7,10 @@ import FacebookIconSVG from '@components/SVGs/FacebookIconSVG';
 import InstagramIconSVG from '@components/SVGs/InstagramIconSVG';
 import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
 import Logo from '@components/Logo';
+import { useWindowWidth } from '../context/WidthContext';
 
 function Header() {
-	const [currentWidth, setCurrentWidth] = useState<number>(0);
+	const windowWidth = useWindowWidth();
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -17,23 +18,13 @@ function Header() {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
-	useLayoutEffect(() => {
-		const handleResize = () => {
-			setCurrentWidth(innerWidth);
-			if (currentWidth < 768) {
-				setIsMobile(true);
-			} else {
-				setIsMobile(false);
-			}
-		};
-
-		handleResize();
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, [currentWidth]);
+	useEffect(() => {
+		if (windowWidth < 768) {
+			setIsMobile(true);
+		} else {
+			setIsMobile(false);
+		}
+	}, [windowWidth]);
 
 	const [isHeaderSticky, setIsHeaderSticky] = useState(false);
 

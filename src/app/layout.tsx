@@ -2,6 +2,7 @@ import './globals.css';
 import { Roboto } from 'next/font/google';
 import Header from '@/app/components/Header';
 import Footer from './components/Footer';
+import { WindowWidthProvider } from './context/WidthContext';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -22,9 +23,15 @@ export default function RootLayout({
 	return (
 		<html lang='pt-br' className='bg-neutral-950'>
 			<body className={roboto.className}>
-				<Header />
+				<WindowWidthProvider>
+					<Header />
+				</WindowWidthProvider>
+
 				{children}
-				<Footer />
+
+				<WindowWidthProvider>
+					<Footer />
+				</WindowWidthProvider>
 			</body>
 		</html>
 	);
