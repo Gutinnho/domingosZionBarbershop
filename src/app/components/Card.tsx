@@ -54,9 +54,14 @@ function Card({ cardIcon, cardName, cardDescription, cardPrice }: CardProps) {
 					</p>
 				</div>
 
-				<button className='w-fit self-end border-2 border-red-500 bg-white px-2 py-1 text-base font-bold uppercase text-red-700 transition duration-300 hover:bg-red-500 hover:text-white sm:text-lg lg:text-xl'>
-					Reserve
-				</button>
+				<a
+					href='#'
+					target='_blank'
+					className='w-fit self-end border-2 border-red-500 bg-white px-2 py-1 transition duration-300 hover:bg-red-500'>
+					<p className='text-sm font-bold uppercase text-red-700 hover:text-white sm:text-base md:text-lg lg:text-xl xl:text-xl'>
+						Reserve
+					</p>
+				</a>
 			</div>
 		</div>
 	);

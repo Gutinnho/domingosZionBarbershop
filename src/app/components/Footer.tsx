@@ -1,7 +1,10 @@
+'use client';
+
 import InstagramIconSVG from './SVGs/InstagramIconSVG';
 import FacebookIconSVG from './SVGs/FacebookIconSVG';
 import WhatsappIcon from './SVGs/WhatsappIconSVG';
 import Logo from '@components/Logo';
+import { Link } from 'react-scroll';
 
 function Footer() {
 	return (
@@ -13,32 +16,45 @@ function Footer() {
 
 				<div className='flex justify-center gap-2'>
 					<ul className='flex flex-col items-end justify-center gap-1'>
-						<li className='levitation text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
-							<a href='#'>Início</a>
-						</li>
-						<li className='levitation text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
-							<a href='#'>Galeria</a>
-						</li>
-						<li className='levitation text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
-							<a href='#'>Contato</a>
-						</li>
+						<Link smooth to='home' className='levitation'>
+							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
+								Início
+							</li>
+						</Link>
+
+						<Link smooth to='services' className='levitation'>
+							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
+								Serviços
+							</li>
+						</Link>
+
+						<Link smooth to='contactus' className='levitation'>
+							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
+								Contato
+							</li>
+						</Link>
 					</ul>
 
 					<div className='flex flex-col gap-2 md:gap-4'>
-						<button className='border-2 border-blue-900 px-1 py-1 text-xs font-bold uppercase text-white drop-shadow-custom transition duration-300 hover:bg-blue-900 md:text-sm'>
-							Agende Agora
-						</button>
+						<a
+							href='#'
+							target='_blank'
+							className='w-full border-2 border-blue-900 px-1 py-1 drop-shadow-custom transition duration-300 hover:bg-blue-900'>
+							<p className='cursor-pointer text-center text-xs font-bold uppercase text-white md:text-sm'>
+								Agende Agora
+							</p>
+						</a>
 
 						<div className='flex justify-center gap-2 md:gap-4'>
-							<a href='#'>
+							<a href='#' target='_blank'>
 								<InstagramIconSVG fill='#2B488A' />
 							</a>
 
-							<a href='#'>
+							<a href='#' target='_blank'>
 								<FacebookIconSVG fill='#2B488A' />
 							</a>
 
-							<a href='#'>
+							<a href='#' target='_blank'>
 								<WhatsappIcon fill='#2B488A' />
 							</a>
 						</div>
@@ -48,7 +64,10 @@ function Footer() {
 			<div className='flex flex-col justify-start border-t border-blue-900 px-3 py-1 md:px-6 md:py-3'>
 				<p className='text-xs font-bold text-white md:text-sm'>
 					&copy; {new Date().getFullYear()}{' '}
-					<a href='https://github.com/Gutinnho' className='hover:brightness-75'>
+					<a
+						target='_blank'
+						href='https://github.com/Gutinnho'
+						className='hover:brightness-75'>
 						Gustavo Lunardi
 					</a>
 					. Todos os direitos reservados.
@@ -58,6 +77,7 @@ function Footer() {
 					className='text-xs font-bold text-white md:text-sm'>
 					Art and design icons created by{' '}
 					<a
+						target='_blank'
 						href='https://www.flaticon.com/free-icons/art-and-design'
 						className='hover:brightness-75'>
 						Freepik - Flaticon

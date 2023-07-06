@@ -8,6 +8,7 @@ import InstagramIconSVG from '@components/SVGs/InstagramIconSVG';
 import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
 import Logo from '@components/Logo';
 import { useWindowWidth } from '../context/WidthContext';
+import { Link } from 'react-scroll';
 
 function Header() {
 	const windowWidth = useWindowWidth();
@@ -66,31 +67,59 @@ function Header() {
 
 						<nav className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-14'>
 							<ul className='flex flex-col items-center gap-9'>
-								<li className='levitation text-2xl font-bold uppercase text-white hover:-translate-y-1 hover:shadow-lg'>
-									Início
-								</li>
-								<li className='levitation text-2xl font-bold uppercase text-white hover:-translate-y-1 hover:shadow-lg'>
-									Serviços
-								</li>
-								<li className='levitation text-2xl font-bold uppercase text-white hover:-translate-y-1 hover:shadow-lg'>
-									Contato
-								</li>
+								<Link
+									spy
+									smooth
+									to='home'
+									onClick={toggleMenu}
+									className='levitation'>
+									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
+										Início
+									</li>
+								</Link>
+
+								<Link
+									smooth
+									spy
+									to='services'
+									onClick={toggleMenu}
+									className='levitation'>
+									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
+										Serviços
+									</li>
+								</Link>
+
+								<Link
+									smooth
+									spy
+									to='contactus'
+									onClick={toggleMenu}
+									className='levitation'>
+									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
+										Contato
+									</li>
+								</Link>
 							</ul>
 
-							<button className='whitespace-nowrap border-2 border-blue-900 px-4 py-2 text-2xl font-bold uppercase text-white drop-shadow-custom transition-colors duration-300 hover:bg-blue-900'>
-								Agende agora
-							</button>
+							<a
+								href='#'
+								target='_blank'
+								className='border-2 border-blue-900 px-4 py-2 drop-shadow-custom transition-colors duration-300 hover:bg-blue-900'>
+								<p className='cursor-pointer whitespace-nowrap text-2xl font-bold uppercase text-white'>
+									Agende agora
+								</p>
+							</a>
 
 							<div className='flex gap-8 py-2'>
-								<a href='#'>
+								<a href='#' target='_blank'>
 									<InstagramIconSVG fill='#2B488A' size={40} />
 								</a>
 
-								<a href='#'>
+								<a href='#' target='_blank'>
 									<FacebookIconSVG fill='#2B488A' size={40} />
 								</a>
 
-								<a href='#'>
+								<a href='#' target='_blank'>
 									<WhatsappIcon fill='#2B488A' size={40} />
 								</a>
 							</div>
@@ -107,35 +136,49 @@ function Header() {
 				} top-0 z-10 flex w-full items-center justify-between  px-6 py-3 transition duration-300 sm:px-10 md:px-14 xl:px-20`}>
 				<Logo />
 
-				<nav className='absolute left-1/2 -translate-x-1/2 transform'>
-					<ul className='flex items-center'>
-						<li className='flex w-24 justify-center border-b-2 border-transparent py-6 transition-colors duration-300 hover:border-white lg:py-7 xl:w-28 xl:border-b-4 xl:py-8 2xl:w-36 2xl:py-10'>
-							<a
-								href='#'
-								className='text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
+				<nav className='absolute left-1/2 flex h-full -translate-x-1/2 transform items-center'>
+					<ul className='flex h-full items-center'>
+						<Link
+							smooth
+							spy
+							activeClass='border-white'
+							to='home'
+							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
+							<li className='cursor-pointer text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
 								Início
-							</a>
-						</li>
-						<li className='flex w-24 justify-center border-b-2 border-transparent py-6 transition-colors duration-300 hover:border-white lg:py-7 xl:w-28 xl:border-b-4 xl:py-8 2xl:w-36 2xl:py-10'>
-							<a
-								href='#'
-								className='text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
+							</li>
+						</Link>
+						<Link
+							smooth
+							spy
+							activeClass='border-white'
+							to='services'
+							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
+							<li className='cursor-pointer text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
 								Serviços
-							</a>
-						</li>
-						<li className='flex w-24 justify-center border-b-2 border-transparent py-6 transition-colors duration-300 hover:border-white lg:py-7 xl:w-28 xl:border-b-4 xl:py-8 2xl:w-36 2xl:py-10'>
-							<a
-								href='#'
-								className='text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
+							</li>
+						</Link>
+						<Link
+							smooth
+							spy
+							activeClass='border-white'
+							to='contactus'
+							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
+							<li className='cursor-pointer text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
 								Contato
-							</a>
-						</li>
+							</li>
+						</Link>
 					</ul>
 				</nav>
 
-				<button className='border-2 border-blue-900 px-2 py-1 text-xl font-bold text-white drop-shadow-custom transition-colors duration-300 hover:bg-blue-900 xl:border-4'>
-					Agende agora
-				</button>
+				<a
+					href='#'
+					target='_blank'
+					className='border-2 border-blue-900 px-2 py-1 drop-shadow-custom transition-colors duration-300 hover:bg-blue-900 xl:border-4'>
+					<p className='cursor-pointer text-xl font-bold text-white'>
+						Agende agora
+					</p>
+				</a>
 			</header>
 		);
 	}

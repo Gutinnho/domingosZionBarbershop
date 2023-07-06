@@ -3,7 +3,7 @@ import backgroundImage from '@assets/homeBg.png';
 
 function InitialSection() {
 	return (
-		<section className='relative py-[120px] lg:py-[160px]'>
+		<section id='home' className='section-spacing relative'>
 			<Image
 				alt=''
 				src={backgroundImage}
@@ -30,11 +30,14 @@ function InitialSection() {
 					</p>
 				</div>
 
-				<button className='border-4 border-blue-900 px-2 py-1 transition-colors duration-300 hover:bg-blue-900 sm:px-3  lg:px-4'>
-					<p className='whitespace-nowrap text-xl font-bold uppercase text-white sm:text-2xl lg:text-3xl xl:text-4xl'>
+				<a
+					href='#'
+					target='_blank'
+					className='border-4 border-blue-900 px-2 py-1 transition-colors duration-300 hover:bg-blue-900 sm:px-3  lg:px-4'>
+					<p className='cursor-pointer whitespace-nowrap text-xl font-bold uppercase text-white sm:text-2xl lg:text-3xl xl:text-4xl'>
 						Agende seu horário
 					</p>
-				</button>
+				</a>
 			</div>
 		</section>
 	);
