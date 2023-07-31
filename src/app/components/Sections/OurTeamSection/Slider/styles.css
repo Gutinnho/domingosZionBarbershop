@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+	.paragraph {
+		@apply whitespace-pre-wrap text-center text-lg text-white sm:text-xl lg:text-2xl;
+	}
+}
