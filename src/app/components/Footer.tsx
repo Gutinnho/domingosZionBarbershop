@@ -11,20 +11,25 @@ function Footer() {
 		<footer className=' flex flex-col gap-3 bg-neutral-800 px-6 py-3 md:px-16 md:py-6 lg:gap-5 lg:px-20 lg:py-8'>
 			<div className='flex justify-between'>
 				<div className='self-center'>
-					<Logo />
+					<Link
+						smooth
+						to='home'
+						className='flex items-center justify-center transition-all duration-300 hover:opacity-75'>
+						<Logo />
+					</Link>
 				</div>
 
 				<div className='flex justify-center gap-2'>
 					<ul className='flex flex-col items-end justify-center gap-1'>
-						<Link smooth to='home' className='levitation'>
-							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
-								Início
-							</li>
-						</Link>
-
 						<Link smooth to='services' className='levitation'>
 							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
 								Serviços
+							</li>
+						</Link>
+
+						<Link smooth to='ourteam' className='levitation'>
+							<li className='cursor-pointer text-xs font-bold uppercase text-white md:text-sm lg:text-base'>
+								Nossa equipe
 							</li>
 						</Link>
 
@@ -66,6 +71,7 @@ function Footer() {
 					&copy; {new Date().getFullYear()}{' '}
 					<a
 						target='_blank'
+						rel='noreferrer'
 						href='https://github.com/Gutinnho'
 						className='hover:brightness-75'>
 						Gustavo Lunardi
@@ -78,6 +84,7 @@ function Footer() {
 					Art and design icons created by{' '}
 					<a
 						target='_blank'
+						rel='noreferrer'
 						href='https://www.flaticon.com/free-icons/art-and-design'
 						className='hover:brightness-75'>
 						Freepik - Flaticon

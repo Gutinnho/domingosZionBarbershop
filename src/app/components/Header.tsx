@@ -50,7 +50,13 @@ function Header() {
 						className={`fixed ${
 							isHeaderSticky ? 'bg-neutral-800/50' : 'bg-neutral-800/80'
 						} top-0 z-10 flex w-full justify-between px-6 py-3 transition duration-300 sm:px-10 md:px-14 xl:px-20`}>
-						<Logo />
+						<Link
+							smooth
+							to='home'
+							className='flex items-center justify-center transition-all duration-300 hover:opacity-75'>
+							<Logo />
+						</Link>
+
 						<button onClick={toggleMenu}>
 							<List size={25} color='white' weight='bold' />
 						</button>
@@ -58,7 +64,13 @@ function Header() {
 				) : (
 					<header className='fixed left-0 right-0 top-0 z-50 flex h-full flex-col gap-20 bg-neutral-950 px-6 py-3 transition duration-200 sm:px-10 md:px-14 xl:px-20'>
 						<div className='flex justify-between'>
-							<Logo />
+							<Link
+								smooth
+								to='home'
+								onClick={toggleMenu}
+								className='flex items-center justify-center transition-all duration-300 hover:opacity-75'>
+								<Logo />
+							</Link>
 
 							<button onClick={toggleMenu}>
 								<X size={25} color='white' weight='bold' />
@@ -68,17 +80,6 @@ function Header() {
 						<nav className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-14'>
 							<ul className='flex flex-col items-center gap-9'>
 								<Link
-									spy
-									smooth
-									to='home'
-									onClick={toggleMenu}
-									className='levitation'>
-									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
-										Início
-									</li>
-								</Link>
-
-								<Link
 									smooth
 									spy
 									to='services'
@@ -86,6 +87,17 @@ function Header() {
 									className='levitation'>
 									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
 										Serviços
+									</li>
+								</Link>
+
+								<Link
+									smooth
+									spy
+									to='ourteam'
+									onClick={toggleMenu}
+									className='levitation'>
+									<li className='cursor-pointer text-2xl font-bold uppercase text-white'>
+										Nossa Equipe
 									</li>
 								</Link>
 
@@ -134,20 +146,15 @@ function Header() {
 				className={`fixed ${
 					isHeaderSticky ? 'bg-neutral-800/50' : 'bg-neutral-800/80'
 				} top-0 z-10 flex w-full items-center justify-between  px-6 py-3 transition duration-300 sm:px-10 md:px-14 xl:px-20`}>
-				<Logo />
+				<Link
+					smooth
+					to='home'
+					className='flex items-center justify-center transition-all duration-300 hover:opacity-75'>
+					<Logo />
+				</Link>
 
 				<nav className='absolute left-1/2 flex h-full -translate-x-1/2 transform items-center'>
 					<ul className='flex h-full items-center'>
-						<Link
-							smooth
-							spy
-							activeClass='border-white'
-							to='home'
-							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
-							<li className='cursor-pointer text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
-								Início
-							</li>
-						</Link>
 						<Link
 							smooth
 							spy
@@ -156,6 +163,16 @@ function Header() {
 							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
 							<li className='cursor-pointer text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
 								Serviços
+							</li>
+						</Link>
+						<Link
+							smooth
+							spy
+							activeClass='border-white'
+							to='ourteam'
+							className='flex h-full w-24 items-center justify-center border-b-2 border-transparent transition-colors duration-300 hover:border-white/50 xl:w-28 xl:border-b-4 2xl:w-36'>
+							<li className='cursor-pointer text-center text-xl font-bold text-white xl:text-2xl 2xl:text-3xl'>
+								Equipe
 							</li>
 						</Link>
 						<Link
