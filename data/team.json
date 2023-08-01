@@ -1,0 +1,31 @@
+[
+	{
+		"name": "Sivalda Santos",
+		"role": "Cabeleleira",
+		"since": 2016,
+		"qualifications": "Formado pela escola Mirna",
+		"links": {
+			"facebook": " "
+		}
+	},
+	{
+		"name": "Domingos Santos",
+		"role": "Barbeiro, Cabeleleiro e Educador",
+		"position": "Fundador da Domingos Zion",
+		"since": 2011,
+		"qualifications": "Formado pela escola Mirna",
+		"links": {
+			"instagram": " "
+		}
+	},
+	{
+		"name": "Weslley Oliveira",
+		"role": "Barbeiro e Cabeleleiro",
+		"since": 2021,
+		"qualifications": "Formado pela Polo cursos",
+		"links": {
+			"instagram": " ",
+			"facebook": " "
+		}
+	}
+]

@@ -6,7 +6,9 @@ import { WindowWidthProvider } from './context/WidthContext';
 
 const roboto = Roboto({
 	subsets: ['latin'],
-	weight: ['300', '500', '700'],
+	display: 'swap',
+	weight: ['400', '300', '900', '500', '700'],
+	preload: true,
 });
 
 export const metadata = {
