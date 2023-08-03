@@ -1,12 +1,14 @@
 'use client';
+
 import Image from 'next/image';
-import { useWindowWidth } from '../context/WidthContext';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 interface IconOptionMapping {
 	[key: string]: string;
 }
 interface CardProps {
-	cardIcon: string; // 'scissors' | 'straightRazor' | 'haircutIcon' | 'hairTratamentIcon'
+	cardIcon: 'scissors' | 'straightRazor' | 'haircutIcon' | 'hairTratamentIcon';
 	cardName: string;
 	cardDescription: string;
 	cardPrice: string;

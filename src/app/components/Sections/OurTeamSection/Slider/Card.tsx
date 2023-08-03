@@ -1,9 +1,9 @@
-import { TeamData } from '@/types/teamData';
-
-import InstagramIconSVG from '@/app/components/SVGs/InstagramIconSVG';
-import FacebookIconSVG from '@/app/components/SVGs/FacebookIconSVG';
+import FacebookIconSVG from '@components/SVGs/FacebookIconSVG';
+import InstagramIconSVG from '@components/SVGs/InstagramIconSVG';
 
 import './styles.css';
+
+import { TeamData } from '@customTypes/teamData';
 
 interface CardProps {
 	info: TeamData;

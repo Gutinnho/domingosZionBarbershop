@@ -1,8 +1,10 @@
 'use client';
 
-import logo from '@assets/Logo.png';
 import Image from 'next/image';
-import { useWindowWidth } from '../context/WidthContext';
+
+import logo from '@assets/Logo.png';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 function Logo() {
 	const windowWidth = useWindowWidth();

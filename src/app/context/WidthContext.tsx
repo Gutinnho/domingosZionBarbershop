@@ -1,18 +1,13 @@
 'use client';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+
+import { createContext, useContext, useEffect, useState } from 'react';
 
 interface WindowWidthContextType {
 	width: number;
 }
 
 const WindowWidthContext = createContext<WindowWidthContextType>({ width: 0 });
-
 WindowWidthContext.displayName = 'WindowWidth';
-
-export function useWindowWidth(): number {
-	const context = useContext(WindowWidthContext);
-	return context.width;
-}
 
 interface WindowWidthProviderProps {
 	children: React.ReactNode;
@@ -21,12 +16,14 @@ interface WindowWidthProviderProps {
 export function WindowWidthProvider({
 	children,
 }: WindowWidthProviderProps): JSX.Element {
-	const [width, setWidth] = useState(window.innerWidth);
+	const [width, setWidth] = useState<number>(0);
 
 	useEffect(() => {
 		const handleResize = (): void => {
 			setWidth(window.innerWidth);
 		};
+
+		handleResize();
 
 		window.addEventListener('resize', handleResize);
 
@@ -40,4 +37,9 @@ export function WindowWidthProvider({
 			{children}
 		</WindowWidthContext.Provider>
 	);
+}
+
+export function useWindowWidth(): number {
+	const context = useContext(WindowWidthContext);
+	return context.width;
 }

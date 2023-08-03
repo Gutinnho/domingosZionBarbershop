@@ -1,6 +1,7 @@
 'use client';
-import { useWindowWidth } from '@/app/context/WidthContext';
 import { useEffect, useState } from 'react';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 interface Props {
 	fill: string;

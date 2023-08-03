@@ -1,14 +1,15 @@
 'use client';
-import { useEffect, useState } from 'react';
 
+import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 import { List, X } from '@phosphor-icons/react';
 
+import Logo from '@components/Logo';
+import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
 import FacebookIconSVG from '@components/SVGs/FacebookIconSVG';
 import InstagramIconSVG from '@components/SVGs/InstagramIconSVG';
-import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
-import Logo from '@components/Logo';
-import { useWindowWidth } from '../context/WidthContext';
-import { Link } from 'react-scroll';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 function Header() {
 	const windowWidth = useWindowWidth();

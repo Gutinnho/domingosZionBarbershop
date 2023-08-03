@@ -9,11 +9,11 @@ import Card from './Card';
 import './styles/slick.css';
 import './styles/slick-theme.css';
 
-import teamData from '@/../data/team.json';
+import teamData from './team.json';
 
-import { TeamData } from '@/types/teamData';
+import { TeamData } from '@customTypes/teamData';
 
-import { useWindowWidth } from '@/app/context/WidthContext';
+import { useWindowWidth } from '@context/WidthContext';
 
 function PrevArrow(props: CustomArrowProps): JSX.Element {
 	const { className, onClick } = props;

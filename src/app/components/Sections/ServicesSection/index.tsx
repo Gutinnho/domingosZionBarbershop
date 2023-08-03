@@ -1,6 +1,8 @@
-import { WindowWidthProvider } from '../context/WidthContext';
 import Card from './Card';
-import cardsData from '@/../data/cards.json';
+
+import cardsData from './cards.json';
+
+import { WindowWidthProvider } from '@context/WidthContext';
 
 function ServicesSection() {
 	return (

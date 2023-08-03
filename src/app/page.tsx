@@ -1,7 +1,7 @@
-import InitialSection from '@components/InitialSection';
 import OurTeamSection from '@components/Sections/OurTeamSection';
-import ServicesSection from '@components/ServicesSection';
 import ContactUsSection from '@components/Sections/ContactUsSection';
+import InitialSection from '@/app/components/Sections/InitialSection';
+import ServicesSection from '@/app/components/Sections/ServicesSection';
 
 export default function Home() {
 	return (

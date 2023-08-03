@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import backgroundImage from '@assets/homeBg.png';
 
 function InitialSection() {

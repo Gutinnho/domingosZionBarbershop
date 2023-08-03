@@ -1,6 +1,6 @@
-import { WindowWidthProvider } from '@/app/context/WidthContext';
-
 import Slider from './Slider/';
+
+import { WindowWidthProvider } from '@/app/context/WidthContext';
 
 function OurTeamSection() {
 	return (

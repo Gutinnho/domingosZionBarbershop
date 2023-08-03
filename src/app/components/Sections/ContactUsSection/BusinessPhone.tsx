@@ -1,7 +1,8 @@
 'use client';
 
-import { useWindowWidth } from '@/app/context/WidthContext';
 import { Phone } from '@phosphor-icons/react';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 export default function BusinessPhone() {
 	const windowWidth = useWindowWidth();

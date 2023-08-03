@@ -1,10 +1,11 @@
 'use client';
 
-import InstagramIconSVG from './SVGs/InstagramIconSVG';
-import FacebookIconSVG from './SVGs/FacebookIconSVG';
-import WhatsappIcon from './SVGs/WhatsappIconSVG';
-import Logo from '@components/Logo';
 import { Link } from 'react-scroll';
+
+import Logo from '@components/Logo';
+import WhatsappIcon from '@components/SVGs/WhatsappIconSVG';
+import FacebookIconSVG from '@components/SVGs/FacebookIconSVG';
+import InstagramIconSVG from '@components/SVGs/InstagramIconSVG';
 
 function Footer() {
 	return (

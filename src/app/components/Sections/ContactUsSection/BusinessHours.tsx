@@ -1,7 +1,8 @@
 'use client';
 
-import { useWindowWidth } from '@/app/context/WidthContext';
 import { Clock } from '@phosphor-icons/react';
+
+import { useWindowWidth } from '@context/WidthContext';
 
 export default function BusinessHours() {
 	const windowWidth = useWindowWidth();

@@ -1,14 +1,14 @@
-import './styles.css';
-
 import Image from 'next/image';
 
-import { WindowWidthProvider } from '@/app/context/WidthContext';
-
-import BusinessAddress from './BusinessAddress';
 import BusinessPhone from './BusinessPhone';
 import BusinessHours from './BusinessHours';
+import BusinessAddress from './BusinessAddress';
+
+import './styles.css';
 
 import backgroundImage from '@assets/contactUsBg.png';
+
+import { WindowWidthProvider } from '@context/WidthContext';
 
 function ContactUsSection() {
 	return (
