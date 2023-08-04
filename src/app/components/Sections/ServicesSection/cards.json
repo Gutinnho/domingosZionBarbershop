@@ -41,7 +41,7 @@
 	},
 	{
 		"title": {
-			"icon": "hairTratamentIcon",
+			"icon": "hairTratament",
 			"name": "Hidratação"
 		},
 		"content": {
@@ -51,7 +51,7 @@
 	},
 	{
 		"title": {
-			"icon": "haircutIcon",
+			"icon": "haircut",
 			"name": "Corte Feminino"
 		},
 		"content": {
