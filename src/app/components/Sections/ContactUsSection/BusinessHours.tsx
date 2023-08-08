@@ -24,7 +24,7 @@ export default function BusinessHours() {
 
 			<div className='flex flex-col gap-1 lg:gap-2 lg:pr-5'>
 				<div className='flex justify-between gap-3 lg:gap-5'>
-					<p className='paragraph_bold'>Segunda:</p>
+					<p className='paragraph_bold'>Domingo e Segunda:</p>
 
 					<p className='paragraph_normal'>Fechado</p>
 				</div>
@@ -47,12 +47,6 @@ export default function BusinessHours() {
 						<br />
 						14:00 - 19:00
 					</p>
-				</div>
-
-				<div className='flex justify-between gap-3 lg:gap-5'>
-					<p className='paragraph_bold'>Domingo:</p>
-
-					<p className='paragraph_normal'>09:00 - 12:00</p>
 				</div>
 			</div>
 		</div>
